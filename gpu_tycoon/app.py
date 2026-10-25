@@ -250,6 +250,9 @@ class SiliconFoundryApp:
             self.p.button(rect, action[0], action[1], action[2] if len(action)>2 else True, action[3] if len(action)>3 else "primary", 13)
 
     def kpi(self, rect, label, value, detail, color=ACCENT, icon=None):
+        # Callers may pass either a pygame.Rect or an (x, y, w, h) tuple.
+        # Normalize first so all KPI drawing paths have the same interface.
+        rect = pygame.Rect(rect)
         self.p.rounded(rect, SURFACE, 14, BORDER)
         self.p.label(label.upper(), rect.x+16, rect.y+14, 10, MUTED, True)
         self.p.label(value, rect.x+16, rect.y+36, 23, TEXT, True)
