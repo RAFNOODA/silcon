@@ -88,10 +88,10 @@ class Painter:
         if not enabled:
             fill, fg, border = (34, 39, 51), (105, 116, 132), None
         elif kind == "primary": fill, fg, border = (58, 190, 157), (8, 26, 28), None
-        elif kind == "danger": fill, fg, border = (75, 38, 51), RED
-        elif kind == "selected": fill, fg, border = (36, 82, 80), ACCENT
+        elif kind == "danger": fill, fg, border = (75, 38, 51), RED, RED
+        elif kind == "selected": fill, fg, border = (36, 82, 80), ACCENT, ACCENT
         elif kind == "outline": fill, fg, border = SURFACE_2, TEXT, BORDER
-        elif kind == "gold": fill, fg, border = (82, 65, 35), YELLOW
+        elif kind == "gold": fill, fg, border = (82, 65, 35), YELLOW, YELLOW
         else: fill, fg, border = SURFACE_2, TEXT, None
         self.rounded(rect, fill, 9, border)
         if enabled and kind in ("primary", "gold"):
